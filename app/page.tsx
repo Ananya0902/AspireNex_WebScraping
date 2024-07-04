@@ -1,11 +1,11 @@
-//import HeroCarousel from "@/components/HeroCarousel"
+
 import Searchbar from "@/components/Searchbar"
 import Image from "next/image"
-//import { getAllProducts } from "@/lib/actions"
-//import ProductCard from "@/components/ProductCard"
+import { getAllProducts } from "@/lib/actions/index"
+import ProductCard from "@/components/ProductCard"
 
 const Home = async () => {
-  //const allProducts = await getAllProducts();
+  const allProducts = await getAllProducts();
 
   return (
     <>
@@ -24,7 +24,7 @@ const Home = async () => {
             <Searchbar />
           </div>
 
-          {/* <HeroCarousel /> */}
+          
         </div>
       </section>
 
@@ -34,9 +34,9 @@ const Home = async () => {
         <div className="flex flex-wrap gap-x-8 gap-y-16">
           trending items are here
 
-          {/* {allProducts?.map((product) => (
+          {allProducts?.map((product) => (
             <ProductCard key={product._id} product={product} />
-          ))} */}
+          ))}
         </div>
       </section>
     </>

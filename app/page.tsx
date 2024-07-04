@@ -1,7 +1,7 @@
 
 import Searchbar from "@/components/Searchbar"
 import Image from "next/image"
-import { getAllProducts } from "@/lib/actions/index"
+import { getAllProducts } from "@/lib/actions"
 import ProductCard from "@/components/ProductCard"
 
 const Home = async () => {
@@ -32,7 +32,7 @@ const Home = async () => {
         <h2 className="section-text">Trending</h2>
 
         <div className="flex flex-wrap gap-x-8 gap-y-16">
-          trending items are here !!
+        <h4 className="font-bold ">🔥 Trending Items Are Here! 🔥</h4>
 
           {allProducts?.map((product) => (
             <ProductCard key={product._id} product={product} />

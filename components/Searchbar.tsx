@@ -8,6 +8,7 @@ const isValidAmazonProductURL = (url: string) => {
     const parsedURL = new URL(url);
     const hostname = parsedURL.hostname;
 
+    console.log("abc");
     if (
       hostname.includes('amazon.com') ||
       hostname.includes('amazon.') ||
@@ -28,7 +29,7 @@ const Searchbar = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    
     const isValidLink = isValidAmazonProductURL(searchPrompt);
 
     if (!isValidLink) return alert('Please provide a valid Amazon link');

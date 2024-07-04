@@ -46,7 +46,9 @@ export async function scrapeAmazonProduct(url: string) {
     const currency = extractCurrency($('.a-price-symbol'))
     const discountRate = $('.savingsPercentage').text().replace(/[-%]/g, "");
 
-    const description = extractDescription($)
+    const description = $('#productDescription p').text().trim() || 
+    $('.a-expander-content.a-expander-partial-collapse-content').text().trim() ||
+    $('#feature-bullets ul').text().trim();
 
     // Construct data object with scraped information
     const data = {

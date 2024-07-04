@@ -1,4 +1,3 @@
-// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -8,6 +7,6 @@ const nextConfig = {
   images: {
     domains: ['m.media-amazon.com']
   }
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig

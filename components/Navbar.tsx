@@ -21,7 +21,7 @@ const Navbar = () => {
           />
 
           <p className="nav-logo font-medium ml-2">
-          <span className='text-primary'>Web Scraping App</span>
+          <span className='text-gray-800'>Easy Shopping</span>
           </p>
         </Link>
 

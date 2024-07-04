@@ -10,7 +10,7 @@ const navIcons = [
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-[#eec9c9] border-4 border-gray-900">
+    <header className="w-full bg-[#eec9c9] border-b-4 border-gray-900">
       <nav className="nav">
         <Link href="/" className="flex items-center gap-1">
           <Image 

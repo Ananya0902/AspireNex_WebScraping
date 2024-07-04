@@ -9,10 +9,13 @@ export async function scrapeAmazonProduct(url: string) {
 
   const apiKey = process.env.SCRAPER_API_KEY;
   const apiUrl = `http://api.scraperapi.com/?api_key=${apiKey}&url=${encodeURIComponent(url)}`;
+  console.log("scraping")
+  console.log(url);
 
   try {
     // Fetch the product page using ScraperAPI
     const response = await axios.get(apiUrl);
+    //console.log(response.data)
     const $ = cheerio.load(response.data);
 
     // Extract the product title

@@ -32,7 +32,7 @@ const Home = async () => {
         <h2 className="section-text">Trending</h2>
 
         <div className="flex flex-wrap gap-x-8 gap-y-16">
-          trending items are here
+          trending items are here !!
 
           {allProducts?.map((product) => (
             <ProductCard key={product._id} product={product} />

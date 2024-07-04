@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-//import { scrapeAndStoreProduct } from '@/lib/actions';
-import { FormEvent, useState } from 'react'
+import { scrapeAndStoreProduct } from '@/lib/actions';
+import { FormEvent, useState } from 'react';
 
 const isValidAmazonProductURL = (url: string) => {
   try {
     const parsedURL = new URL(url);
     const hostname = parsedURL.hostname;
 
-    if(
-      hostname.includes('amazon.com') || 
-      hostname.includes ('amazon.') || 
+    if (
+      hostname.includes('amazon.com') ||
+      hostname.includes('amazon.') ||
       hostname.endsWith('amazon')
     ) {
       return true;
@@ -31,25 +31,24 @@ const Searchbar = () => {
 
     const isValidLink = isValidAmazonProductURL(searchPrompt);
 
-    if(!isValidLink) return alert('Please provide a valid Amazon link')
+    if (!isValidLink) return alert('Please provide a valid Amazon link');
 
     try {
       setIsLoading(true);
+      console.log('Starting to scrape and store product...');
 
       // Scrape the product page
-     // const product = await scrapeAndStoreProduct(searchPrompt);
+      const product = await scrapeAndStoreProduct(searchPrompt);
+      console.log('Product scraped and stored:', product);
     } catch (error) {
-      console.log(error);
+      console.log('Error occurred:', error);
     } finally {
       setIsLoading(false);
     }
   }
 
   return (
-    <form 
-      className="flex flex-wrap gap-4 mt-12" 
-      onSubmit={handleSubmit}
-    >
+    <form className="flex flex-wrap gap-4 mt-12" onSubmit={handleSubmit}>
       <input 
         type="text"
         value={searchPrompt}
@@ -57,7 +56,6 @@ const Searchbar = () => {
         placeholder="Enter product link"
         className="searchbar-input border-8 border-gray-900"
       />
-
       <button 
         type="submit" 
         className="searchbar-btn bg-gray-800 hover:bg-gray-900"
@@ -66,7 +64,7 @@ const Searchbar = () => {
         {isLoading ? 'Searching...' : 'Search'}
       </button>
     </form>
-  )
+  );
 }
 
-export default Searchbar
+export default Searchbar;

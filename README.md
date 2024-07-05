@@ -8,7 +8,6 @@ Welcome to our Web Scraping Project repository! This project aims to demonstrate
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
